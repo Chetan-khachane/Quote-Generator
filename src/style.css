@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Noto+Sans+HK:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('../Public/images/bg.jpg') center center border-box fixed;
+  background-size: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.card {
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 10px 3px gray;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  width: 70%;
+}
+
+
+/* //Below for checking long or small quotes */
+.long-quote {
+  font-size: 1rem;
+}
+
+.quote {
+  font-family: 'Noto Sans HK', sans-serif;
+  font-weight: 600;
+  font-size: 2.3rem;
+  color: hsl(15, 10%, 30%);
+}
+
+.quote::before {
+
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  content: "\201c";
+  font-size: 3rem;
+
+}
+
+.author {
+  font-family: 'Merienda', cursive;
+  font-weight: 300;
+  font-size: 2.3rem;
+  color: hsl(45, 25%, 50%);
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btns button {
+  margin: 10px;
+  outline: none;
+  padding: 10px 1rem;
+  font-family: 'Noto Sans HK', sans-serif;
+  font-weight: 300;
+  border-radius: 5px;
+  border: none;
+  background-color: hsl(12, 0%, 15%);
+  color: #f3f3f3;
+}
+
+svg {
+  width: 3rem;
+}
+
+.btns button:hover,
+svg:hover {
+  opacity: 0.7;
+}
+
+
+/* loader style below */
+.loadervisible {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1544;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100px;
+  border-width: 0.89rem;
+  border-bottom: 12px solid springgreen;
+  border-top: 12px solid lightseagreen;
+  border-left: 12px solid gray;
+  border-right: 12px solid gray;
+  animation: spin 2s ease-in-out infinite;
+}
+
+.loadervisible.hiddenloader {
+  animation: fadeOut 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.hideCard {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* //Media Queries through common Breakpoints */
+
+
+/* Extra Large Screen,TV */
+@media screen and (min-width:1200px) {}
+
+
+/* Desktop,Large Screens */
+@media screen and (min-width:992px) {}
+
+
+/* Small Screens and Laptops */
+@media screen and (min-width:768px) {}
+
+
+/* iPads,Tablets */
+@media screen and (min-width:576px) {}
+
+/* 
+/* Mobile Devices */
+@media screen and (max-width:576px) {
+
+  body {
+    padding: 0rem;
+  }
+
+  .card {
+    padding: 1.4rem;
+    width: 90%;
+  }
+
+  .quote {
+    font-size: 2rem;
+  }
+
+  .long-quote {
+    font-size: 1.8rem;
+  }
+
+  .btns button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .author {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+  }
+
+}
